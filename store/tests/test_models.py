@@ -25,6 +25,7 @@ class TestCategoriesModel(TestCase):
         data = self.data1
         self.assertEqual(str(data), 'book')
 
+
 class TestProductsModel(TestCase):
     def setUp(self):
         Category.objects.create(name='book', slug='book')
