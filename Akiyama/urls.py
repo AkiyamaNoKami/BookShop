@@ -7,8 +7,9 @@ from store import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('basket/', include('basket.urls', namespace='basket')),
     path('', include('store.urls', namespace='store')),
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
