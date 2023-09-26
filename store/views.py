@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, Http404
 
 from .models import Category, Product
 
@@ -15,5 +15,9 @@ def category_list(request, category_slug=None):
 
 
 def product_detail(request, slug):
-    product = get_object_or_404(Product, slug=slug, in_stock=True)
+    product = None
+    try:
+        product = get_object_or_404(Product, slug=slug, in_stock=True)
+    except Http404 as e:
+        print(e)  # Вывести информацию об ошибке в консоль
     return render(request, 'store/products/single.html', {'product': product})
