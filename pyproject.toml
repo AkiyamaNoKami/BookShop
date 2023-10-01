@@ -13,6 +13,7 @@ mysql-connector-python = "^8.0.33"
 coverage = "^7.2.7"
 flake8 = "^6.1.0"
 flake8-isort = "^6.1.0"
+django-countries = "^7.5.1"
 
 
 [build-system]
