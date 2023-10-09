@@ -7,7 +7,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
-from .forms import RegistrationForm
+from .forms import RegistrationForm, UserEditForm
 from .models import UserBase
 from .token import account_activation_token
 
