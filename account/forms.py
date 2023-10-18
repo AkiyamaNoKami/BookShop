@@ -79,9 +79,9 @@ class PwdResetForm(PasswordResetForm):
         attrs={'class': 'form-control mb-3', 'placeholder': 'Email', 'id': 'form-email'}))
 
     def clean_email(self):
-        email = self.clean_data['email']
+        email = self.cleaned_data['email']
         u = UserBase.objects.filter(email=email)
         if not u:
             raise forms.ValidationError(
-                'Unfortunately we can not find that email address')
+                'Unfortunatley we can not find that email address')
         return email
