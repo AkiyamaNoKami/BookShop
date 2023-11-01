@@ -22,7 +22,7 @@ SECRET_KEY = 'django-insecure-^*)i6(7nbvb2z^pca3w(z+9ne8b0#z66bjbppi81rqd5^0&t31
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['yourdomain.com', '127.0.0.1', 'localhost']
 
 
 
@@ -125,3 +125,9 @@ LOGIN_URL = '/account/login/'
 
 #Email setting
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#Stripe payment
+PUBLISHABLE_KEY = 'pk_test_51O7Gu9HtpNtph5DTmlqA7aEGuejHJHmdM4QyGfFisW90r4sNcsnDMljM9y9K2xWU0jZtoiJFOqNvIAqbj67T7WlD00tj1lvd6s'
+SECRET_KEY = 'sk_test_51O7Gu9HtpNtph5DTuBbqWA1a5byhwLlaDmNu8kffA981N0QIRRUtRWojGvd87pLCBaoLDqZrQ8bqjzCNb1EmT0bT00w9fzX4hy'
+STRIPE_ENDPOINT_SECRET = 'whsec_e370621a19ed4f2f6dea33828b16963179d3f125c420980da41775e2caeaf147'
+#stripe listen --forward-to localhost:8000/payment/webhook/
