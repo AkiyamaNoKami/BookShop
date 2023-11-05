@@ -121,7 +121,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 #Basket session ID
 BASKET_SESSION_ID = 'basket'
 
-#Custom user model
+#Custom dashboard model
 AUTH_USER_MODEL = 'account.UserBase'
 LOGIN_REDIRECT_URL = '/account/dashboard'
 LOGIN_URL = '/account/login/'
