@@ -121,7 +121,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 #Basket session ID
 BASKET_SESSION_ID = 'basket'
 
-#Custom dashboard model
+#Custom user model
 AUTH_USER_MODEL = 'account.UserBase'
 LOGIN_REDIRECT_URL = '/account/dashboard'
 LOGIN_URL = '/account/login/'
@@ -130,7 +130,6 @@ LOGIN_URL = '/account/login/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 #Stripe payment
-PUBLISHABLE_KEY = 'pk_test_51O7Gu9HtpNtph5DTmlqA7aEGuejHJHmdM4QyGfFisW90r4sNcsnDMljM9y9K2xWU0jZtoiJFOqNvIAqbj67T7WlD00tj1lvd6s'
-SECRET_KEY = 'sk_test_51O7Gu9HtpNtph5DTuBbqWA1a5byhwLlaDmNu8kffA981N0QIRRUtRWojGvd87pLCBaoLDqZrQ8bqjzCNb1EmT0bT00w9fzX4hy'
-STRIPE_ENDPOINT_SECRET = 'whsec_e370621a19ed4f2f6dea33828b16963179d3f125c420980da41775e2caeaf147'
+os.environ.setdefault('STRIPE_PUBLISHABLE_KEY', 'pk_test_51O7Gu9HtpNtph5DTmlqA7aEGuejHJHmdM4QyGfFisW90r4sNcsnDMljM9y9K2xWU0jZtoiJFOqNvIAqbj67T7WlD00tj1lvd6s')
+STRIPE_SECRET_KEY = 'sk_test_51O7Gu9HtpNtph5DTuBbqWA1a5byhwLlaDmNu8kffA981N0QIRRUtRWojGvd87pLCBaoLDqZrQ8bqjzCNb1EmT0bT00w9fzX4hy'
 #stripe listen --forward-to localhost:8000/payment/webhook/
