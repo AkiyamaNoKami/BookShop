@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 SECRET_KEY = 'django-insecure-^*)i6(7nbvb2z^pca3w(z+9ne8b0#z66bjbppi81rqd5^0&t31'
@@ -116,7 +116,7 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, '../../media/')
 
 #Basket session ID
 BASKET_SESSION_ID = 'basket'
