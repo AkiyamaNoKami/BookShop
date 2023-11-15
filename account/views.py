@@ -8,7 +8,7 @@ from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 
 from django.shortcuts import render, redirect
 from .forms import RegistrationForm, UserEditForm
-from .models import Customer
+from .models import Customer, Address
 from .tokens import account_activation_token
 from orders.views import user_orders
 
@@ -87,3 +87,11 @@ def account_activate(request, uidb64, token):
         return redirect('account:dashboard')
     else:
         return render(request, 'account/registration/activation_invalid.html')
+
+
+#Addresses
+
+@login_required
+def view_address(request):
+    addresses = Address.objects.filter(customer=request.user)
+    return render(request, "account/dashboard/addresses.html", {"addresses": addresses})
