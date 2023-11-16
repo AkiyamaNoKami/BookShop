@@ -16,8 +16,8 @@ Table ProductSpecification as PS {
   id int [pk, increment]
   product_type int
   name varchar
-}
-Ref: PT.id < PS.product_type
+} 
+Ref: PT.id < PS.product_type  
 
 Table Product as P {
   id int [pk, increment]
@@ -31,7 +31,7 @@ Table Product as P {
   created_at timestamp
   updated_at timestamp
 }
-Ref: PT.id < P.product_type
+Ref: PT.id < P.product_type 
 Ref: C.id < P.category
 
 Table ProductSpecificationValue as PSV {
@@ -52,3 +52,14 @@ Table ProductImage as PI {
   updated_at timestamp
 }
 Ref: P.id < PI.product
+
+Table Customer as Cu {
+  id int [pk, increment]
+  email email
+  name varchar
+  mobile varchar
+  is_active int
+  is_staff int
+  created datetime
+  updated datetime
+}
