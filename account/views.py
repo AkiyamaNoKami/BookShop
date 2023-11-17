@@ -13,6 +13,12 @@ from .forms import RegistrationForm, UserEditForm, UserAddressForm
 from .models import Customer, Address
 from .tokens import account_activation_token
 
+
+@login_required
+def wishlist(request):
+    products = Product.objects.filter(users_wishlist=request.user)
+    return render(request, "account/dashboard/user_wish_list.html", {"wishlist": products})
+
 @login_required
 def add_to_wishlist(request, id):
     product = get_object_or_404(Product, id=id)
